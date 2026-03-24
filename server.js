@@ -2,7 +2,9 @@ const express  = require('express');
 const { MongoClient } = require('mongodb');
 const cors     = require('cors');
 const crypto   = require('crypto');
+const https    = require('https');
 const path     = require('path');
+
 
 const app = express();
 app.use(cors());
@@ -17,6 +19,7 @@ const DB_NAME   = 'flowsync';
 const PORT      = process.env.PORT || 3001;
 const ADMIN_USERNAME = 'sharifmolla354';
 const ADMIN_PASSWORD = '7506035297';
+const APP_URL    = process.env.APP_URL || 'https://myflowsync.netlify.app'; 
 
 // ── CONNECT ───────────────────────────────────────────────────────────────
 let db;
